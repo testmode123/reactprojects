@@ -11,18 +11,20 @@ const TodoListBasic = () => {
     }
 
     const btnAddHandle = () =>{
-        console.log(toggleBtn);
         if(!inputValue){
             alert('please enter your title');
         } else if(inputValue && !toggleBtn){
-            setItemList(itemList.map((elem, index) => {
-                if(index === editItem){
-                    console.log(index, editItem, ...itemList, inputValue);
-                }
-                return elem;
-            }))
+            // setItemList()
+            itemList.map((elem) => {
+                console.log(elem)
+                // if(index === editItem){
+                //     console.log(index, editItem, ...itemList, inputValue);
+                // }
+                // return elem;
+            })
         } else {
-            setItemList([...itemList, inputValue]);
+            const newdata = {id: new Date().getTime().toString(), name:inputValue}
+            setItemList([...itemList, newdata]);
         }
         setInputValue("");
     }
@@ -50,8 +52,8 @@ const TodoListBasic = () => {
             <button type="button" onClick={btnAddHandle}>+</button>
             <ul>
                 {
-                    itemList.map((item, ind) => {
-                        return <TodoItems key={ind} item={item} ind={ind} btnDeleteHandle={btnDeleteHandle} btnEditHandle={btnEditHandle}/>
+                    itemList.map((item) => {
+                        return <TodoItems key={item.id} item={item.name} ind={item.id} btnDeleteHandle={btnDeleteHandle} btnEditHandle={btnEditHandle}/>
                     })
                 }    
             </ul>
