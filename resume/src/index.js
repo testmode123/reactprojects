@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TodoListBasic from './components/TodoListBasic';
+import TodoListLocalStorage from './components/TodoListLocalStorage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TodoListBasic />
+    <>
+      <TodoListBasic />
+      <TodoListLocalStorage />
+    </>
+    
   </React.StrictMode>
 );
 

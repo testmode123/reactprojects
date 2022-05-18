@@ -2,31 +2,34 @@ import React,{useState} from "react";
 import TodoItems from './TodoItem';
 
 const TodoListBasic = () => {
-    const [inputValue, setInputValue] = useState("");
+    const [inputData, setInputData] = useState("");
     const [itemList, setItemList] = useState([]);
-    const [editItem, setEditItem] = useState(null);
-    const [toggleBtn, setToggleBtn] = useState(true);
+    const [IsEditItem, setIsEditItem] = useState(null);
+    const [toggleSubmit, setToggleSubmit] = useState(true);
     const inputHandle = (e) => {
-        setInputValue(e.target.value);
+        setInputData(e.target.value);
     }
 
     const btnAddHandle = () =>{
-        if(!inputValue){
+        if(!inputData){
             alert('please enter your title');
-        } else if(inputValue && !toggleBtn){
-            // setItemList()
-            itemList.map((elem) => {
-                console.log(elem)
-                // if(index === editItem){
-                //     console.log(index, editItem, ...itemList, inputValue);
-                // }
-                // return elem;
-            })
+        } else if(inputData && !toggleSubmit){
+            setItemList(
+                itemList.map((elem)=>{
+                    if(elem.id === IsEditItem){
+                        return {...elem, name:inputData}
+                    }
+                    return elem;
+                })
+            )    
+            setInputData('');
+            setIsEditItem(null);
+            setToggleSubmit(false);
         } else {
-            const newdata = {id: new Date().getTime().toString(), name:inputValue}
+            const newdata = {id: new Date().getTime().toString(), name:inputData}
             setItemList([...itemList, newdata]);
-        }
-        setInputValue("");
+            setInputData("");
+        }        
     }
 
     const btnDeleteHandle = (ind) => {
@@ -37,19 +40,19 @@ const TodoListBasic = () => {
     }
 
     const btnEditHandle = (id) => {
-        let newItem = itemList.find((elem, ind)=> {
-            return ind===id;
+        let newItem = itemList.find((elem)=> {
+            return elem.id===id;
         });
-        setInputValue(newItem);
-        setEditItem(id);
-        setToggleBtn(false);
+        setInputData(newItem.name);
+        setIsEditItem(id);
+        setToggleSubmit(false);
     }
     
     return (
         <>
             <h1>Todo List Basic</h1>
-            <input type="text" name="content" value={inputValue} placeholder="Enter your list" onChange={inputHandle}/>
-            <button type="button" onClick={btnAddHandle}>+</button>
+            <input type="text" name="content" value={inputData} placeholder="Enter your list" onChange={inputHandle} autoComplete="off"/>
+            <button type="button" onClick={btnAddHandle}>{toggleSubmit ? '+' : '-' }</button>
             <ul>
                 {
                     itemList.map((item) => {
