@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TodoListBasic from './components/TodoListBasic';
 import TodoListLocalStorage from './components/TodoListLocalStorage';
+import DigitalClock from './components/DigitalClock';
+import WeatherApp from './components/WeatherApp';
+import CalculatorApp from './components/CalculatorApp';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +17,9 @@ root.render(
     <>
       <TodoListBasic />
       <TodoListLocalStorage />
+      <DigitalClock />
+      <WeatherApp />
+      <CalculatorApp />
     </>
     
   </React.StrictMode>
@@ -20,4 +28,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
