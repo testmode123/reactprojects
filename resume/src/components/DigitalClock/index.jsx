@@ -13,6 +13,7 @@ const DigitalClock = () => {
 
     return (
         <>
+            <h3>Digital Clock</h3>
             <p>{ctime}</p>
         </>
     )

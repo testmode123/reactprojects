@@ -36,6 +36,7 @@ const CalculatorApp = () => {
     }
     return (
         <>
+            <h2>Calculator</h2>
             <textarea value={num} readOnly/> <br/>
             <textarea value={resultData} readOnly/> <br/>
             <button onClick={btnClick} value="9">9</button>

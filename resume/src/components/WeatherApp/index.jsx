@@ -3,7 +3,8 @@ import React from 'react';
 const WeatherApp = () => {
     return (
         <>
-            <p>WeatherApp Index page</p>
+            <h3>WeatherApp Index page</h3>
+            
         </>
     )
 }
