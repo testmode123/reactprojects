@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import TodoListBasic from './components/TodoListBasic';
 import TodoListLocalStorage from './components/TodoListLocalStorage';
 import DigitalClock from './components/DigitalClock';
+import AnalogClock from './components/AnalogClock';
 import WeatherApp from './components/WeatherApp';
 import CalculatorApp from './components/CalculatorApp';
 
@@ -18,6 +19,7 @@ root.render(
       <TodoListBasic />
       <TodoListLocalStorage />
       <DigitalClock />
+      <AnalogClock />
       <WeatherApp />
       <CalculatorApp />
     </>
