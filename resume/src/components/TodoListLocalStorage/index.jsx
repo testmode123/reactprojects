@@ -1,5 +1,7 @@
 import React,{useState, useEffect} from "react";
 import TodoItems from './TodoItem';
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 const getItems = JSON.parse(localStorage.getItem('itemList') ||'[]');
  
@@ -67,18 +69,32 @@ const TodoListLocalStorage = () => {
     },[itemList])
     
     return (
-        <>
-            <h1>Todo List LocalStorage</h1>
-            <input type="text" name="content" value={inputData} placeholder="Enter your list" onChange={inputHandle} autoComplete="off"/>
-            <button type="button" onClick={btnAddHandle}>{toggleSubmit ? '+' : '-' }</button>
-            <ul>
-                {
-                    itemList.map((item) => {
-                        return <TodoItems key={item.id} item={item.name} ind={item.id} btnDeleteHandle={btnDeleteHandle} btnEditHandle={btnEditHandle}/>
-                    })
-                }    
-            </ul>
-        </>
+        <div className="container">
+            <div className="content">
+                <div className="row">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Todo List LocalStorage</h5>
+                            <div className="row">
+                                <div className="col-sm-10">
+                                <input type="text" className="form-control" name="content" value={inputData} placeholder="Enter your list" onChange={inputHandle} autoComplete="off"/>
+                                </div>
+                                <div className="col-sm-2">
+                                <button type="button" className="btn btn-primary mb-2" onClick={btnAddHandle}>{toggleSubmit ? '+' : '-' }</button>
+                                </div>
+                            </div>
+                        </div>
+                        <ul className="list-group list-group-flush">
+                            {
+                                itemList.map((item) => {
+                                    return <TodoItems key={item.id} item={item.name} ind={item.id} btnDeleteHandle={btnDeleteHandle} btnEditHandle={btnEditHandle}/>
+                                })
+                            } 
+                        </ul>
+                    </div> 
+                </div>  
+            </div> 
+        </div>
     )
 }
 

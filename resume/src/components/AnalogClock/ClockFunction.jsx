@@ -51,7 +51,7 @@ const ClockFunction = (props) =>{
 
     return (
         <div className="clock_block">
-            <h3>{props.title}</h3>
+            <h5>{props.title}</h5>
             <div className="clock_circle">
                 <div className="face">
                     <div id={"secondHand_"+props.datediff} className={"hand second"} />
