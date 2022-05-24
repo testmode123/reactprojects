@@ -16,12 +16,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <>
-      <TodoListBasic />
-      <TodoListLocalStorage />
-      <DigitalClock />
-      <AnalogClock />
-      <WeatherApp />
-      <CalculatorApp />
+      <TodoListBasic /><hr />
+      <TodoListLocalStorage /><hr />
+      <DigitalClock /><hr />
+      <AnalogClock /><hr />
+      <WeatherApp /><hr />
+      <CalculatorApp /><hr />
+
     </>
     
   </React.StrictMode>
