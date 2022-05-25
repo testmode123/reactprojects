@@ -35,8 +35,8 @@ const TodoListBasic = () => {
     }
 
     const btnDeleteHandle = (ind) => {
-        let items = itemList.filter((elem, index)=>{ 
-            return index !== ind;
+        let items = itemList.filter((elem)=>{ 
+            return elem.id !== ind;
         });
         setItemList(items);
     }
