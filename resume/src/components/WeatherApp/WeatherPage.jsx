@@ -1,3 +1,4 @@
+/*
 import React,{useState, useEffect} from 'react';
 import Weather from './Weather';
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -38,8 +39,7 @@ const WeatherPage = () => {
 
 export default WeatherPage;
 
-
-/*
+*/
 
 import React,{useState, useEffect} from 'react';
 import Weather from './Weather';
@@ -102,4 +102,3 @@ const WeatherPage = () => {
 }
 
 export default WeatherPage;
-*/
